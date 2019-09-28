@@ -102,3 +102,24 @@ class HiddenLayer(InputLayer):
 
             for yy in range(shp[1]):
                 self.weight_matrix[xx, yy] += pl.activation_vector[yy] * self.error_vector[xx]
+
+                
+def addHiddenLayer(size, previous_layer):
+  
+  return hid
+
+# Needs to be a method of the neural net class
+def propogate(i_vector):
+  inp.set_inputs(i_vector)
+  hid.forward_propagate()
+  hid2.forward_propagate()
+
+  # Also needs to be a method of the neural net class
+def backpropogate(t_vector):
+  # finds the de/dp of all nodes#
+  hid2.set_error(t_vector)
+  hid2.back_propagate()
+
+  # uses the de/dp of the nodes to change the weights#
+  hid2.back_propagate_weights()
+  hid.back_propagate_weights()
